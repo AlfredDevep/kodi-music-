@@ -42,11 +42,16 @@ function App() {
           playlists: playlists,
         });
       });
-    }
 
+      spotify.getPlaylist('').then((response) => {
+        dispatch({
+          type:  'SET_DISCOVERy_WEEKLY',
+          discover_weekly: response
+    })
+      
   }, []);
 
-
+ 
   return (
     <>
       <div className="app">
